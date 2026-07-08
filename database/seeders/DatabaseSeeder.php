@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
        DB::table("users")->insert([
-        'first_name' => 'User',
-        'last_name' => 'Name',
-        'email'=> 'user@gmail.com',
+        'first_name' => 'Harsha',
+        'last_name' => 'Samarasinghe',
+        'email'=> 'harshasamare25@gmail.com',
         'email_verified_at' => now(),
-        'password'=> Hash::make('password'),
+        'password'=> Hash::make('#Harsha1234'),
         'remember_token' => Str::random(10),
         'role' => UserRole::ADMIN,
         'phone_number' => '0763537831',

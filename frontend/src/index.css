@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* Brand logo styles */
+.brand-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.brand-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: #888;
+  line-height: 1;
+  margin-top: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Custom Button */
+.custom-btn {
+  border: 1px solid #000 !important;
+  background-color: transparent !important;
+  color: #000 !important;
+  border-radius: 50px !important;
+  padding: 0.4rem 1.4rem !important;
+  font-weight: 500 !important;
+  font-family: 'Poppins', sans-serif !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease !important;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.custom-btn:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.custom-btn:active {
+  transform: scale(0.97);
+}
+
+.custom-btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Navbar link hover animation */
+.nav-hover-link {
+  color: #555 !important;
+  transition: color 0.25s ease-out, transform 0.25s ease-out !important;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-hover-link:hover {
+  color: #000 !important;
+  transform: translateY(-2px);
+}
+
+/* Feature Cards Hover Animation (3D Depth) */
+.feature-card {
+  border: none !important;
+  background-color: #ffffff !important;
+  border-radius: 16px !important;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 16px -6px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  transform: perspective(1000px) translateZ(0);
+}
+
+.feature-card:hover {
+  transform: perspective(1000px) translateY(-12px) translateZ(30px) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Loading screen */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.logo-spinner-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+}
+
+.logo-spinner {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #000;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.spinner-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Bounce scroll animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
