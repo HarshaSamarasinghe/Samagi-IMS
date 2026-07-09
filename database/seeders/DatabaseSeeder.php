@@ -22,16 +22,16 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
        DB::table("users")->insert([
-        'first_name' => 'Harsha',
-        'last_name' => 'Samarasinghe',
-        'email'=> 'harshasamare25@gmail.com',
+        'first_name' => 'Asitha',
+        'last_name' => 'Adhikari',
+        'email'=> 'asitha@gmail.com',
         'email_verified_at' => now(),
-        'password'=> Hash::make('#Harsha1234'),
+        'password'=> Hash::make('12345678'),
         'remember_token' => Str::random(10),
         'role' => UserRole::ADMIN,
-        'phone_number' => '0763537831',
+        'phone_number' => '0701234567',
         'address' => 'Polgahawela',
-        'nic' => '200316410731',
+        'nic' => '123456789098',
         'created_at' => now(),
         'updated_at'=> now(),
        ]);
